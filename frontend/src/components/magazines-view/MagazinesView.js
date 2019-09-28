@@ -1,5 +1,5 @@
 import React from 'react';
-import {MagazinesViewContainer, MagazinesViewHeader, MagazineTitle} from "./MagazinesViewStyles";
+import {MagazinesViewContainer, MagazinesViewFooter, MagazinesViewHeader, MagazineTitle} from "./MagazinesViewStyles";
 
 function MagazinesView() {
     return (
@@ -7,6 +7,9 @@ function MagazinesView() {
             <MagazinesViewHeader>
                 <MagazineTitle>Title</MagazineTitle>
             </MagazinesViewHeader>
+            <MagazinesViewFooter>
+
+            </MagazinesViewFooter>
         </MagazinesViewContainer>
     );
 }
