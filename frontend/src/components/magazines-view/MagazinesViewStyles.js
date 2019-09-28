@@ -24,6 +24,11 @@ export const MagazineTitle = styled.div`
   margin: auto;
 `;
 
+export const MagazinesViewBody = styled.div`
+  height: 100%;
+  width: 100%;
+`;
+
 export const MagazinesViewFooter = styled.footer`
   ${defaultBar};
   margin: auto auto 0;

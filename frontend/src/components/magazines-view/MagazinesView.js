@@ -1,5 +1,11 @@
 import React from 'react';
-import {MagazinesViewContainer, MagazinesViewFooter, MagazinesViewHeader, MagazineTitle} from "./MagazinesViewStyles";
+import {
+    MagazinesViewBody,
+    MagazinesViewContainer,
+    MagazinesViewFooter,
+    MagazinesViewHeader,
+    MagazineTitle
+} from "./MagazinesViewStyles";
 
 function MagazinesView() {
     return (
@@ -7,6 +13,7 @@ function MagazinesView() {
             <MagazinesViewHeader>
                 <MagazineTitle>Title</MagazineTitle>
             </MagazinesViewHeader>
+            <MagazinesViewBody/>
             <MagazinesViewFooter>
 
             </MagazinesViewFooter>
