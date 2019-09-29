@@ -18,5 +18,5 @@ export function searchArticles(articles, search) {
 }
 
 export function selectArticleById(id, articles) {
-    return articles.findIndex(article => article.id === id);
+    return articles.find(article => article.id === id);
 }
