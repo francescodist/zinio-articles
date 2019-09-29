@@ -7,23 +7,16 @@ import {
     ArticlesViewHeader,
     ArticleTitle, FooterContainer, FooterNavigationButtons, FooterPageIndex, NavigationButton
 } from "./ArticlesViewStyles";
-import {fetchArticles, searchArticles, selectArticleById} from "../../actions";
+import {fetchArticles, searchArticles, selectArticleById, useArticles} from "../../actions";
 
 function ArticlesView() {
 
-    const [articles, setArticles] = useState(null);
-    const [selectedIndex, setSelectedIndex] = useState(null);
+    const articles = useArticles(null);
+    const [selectedIndex, setSelectedIndex] = useState(0);
     const [search, setSearch] = useState(null);
     const [searchResults, setSearchResults] = useState([]);
 
     const bodyRef = React.createRef();
-
-    useEffect(() => {
-        fetchArticles().then(articles => {
-            setSelectedIndex(0);
-            setArticles(articles);
-        });
-    }, []);
 
     useEffect(() => {
         if (search && search.length > 0) {
