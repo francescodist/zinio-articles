@@ -25,7 +25,8 @@ export const ArticleTitle = styled.div`
 `;
 
 export const ArticlesViewBody = styled.div`
-  height: 100%;
+  max-height: 100%;
+  overflow: auto;
   width: 100%;
 `;
 
