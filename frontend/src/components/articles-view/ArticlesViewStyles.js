@@ -7,29 +7,29 @@ const defaultBar = css`
   display: flex;
 `;
 
-export const MagazinesViewContainer = styled.div`
+export const ArticlesViewContainer = styled.div`
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
 `;
 
-export const MagazinesViewHeader = styled.header`
+export const ArticlesViewHeader = styled.header`
   ${defaultBar};
   font-size: 30px;
   color: #ffffff;
 `;
 
-export const MagazineTitle = styled.div`
+export const ArticleTitle = styled.div`
   margin: auto;
 `;
 
-export const MagazinesViewBody = styled.div`
+export const ArticlesViewBody = styled.div`
   height: 100%;
   width: 100%;
 `;
 
-export const MagazinesViewFooter = styled.footer`
+export const ArticlesViewFooter = styled.footer`
   ${defaultBar};
   margin: auto auto 0;
 `;

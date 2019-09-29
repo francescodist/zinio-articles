@@ -1,14 +1,14 @@
 import React from 'react';
 import {Redirect, Route, Switch} from "react-router-dom";
-import MagazinesView from "./components/magazines-view";
+import ArticlesView from "./components/articles-view";
 import styled from "styled-components";
 
 function App() {
   return (
       <AppView>
           <Switch>
-              <Route exact path="/magazines"  component={MagazinesView} />
-              <Redirect to="/magazines" />
+              <Route exact path="/articles"  component={ArticlesView} />
+              <Redirect to="/articles" />
           </Switch>
       </AppView>
   );
