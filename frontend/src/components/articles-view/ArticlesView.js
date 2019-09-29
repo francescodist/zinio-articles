@@ -7,12 +7,17 @@ import {
     ArticlesViewHeader,
     ArticleTitle, FooterContainer, FooterNavigationButtons, FooterPageIndex, NavigationButton
 } from "./ArticlesViewStyles";
-import {fetchArticles, searchArticles, selectArticleById, useArticles} from "../../actions";
+import {searchArticles, selectArticleById} from "../../actions";
+import {useArticles} from "../../hooks";
 
 function ArticlesView() {
 
-    const articles = useArticles(null);
-    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [
+        articles,
+        selectedIndex,
+        setSelectedIndex,
+        selectedArticle
+    ] = useArticles(null);
     const [search, setSearch] = useState(null);
     const [searchResults, setSearchResults] = useState([]);
 
@@ -43,7 +48,7 @@ function ArticlesView() {
                             </ArticleSearchResult>)}
                     </ArticleSearchResults> : ''}
             </ArticlesViewHeader>
-            <ArticlesViewBody ref={bodyRef} dangerouslySetInnerHTML={{__html: articles ? articles[selectedIndex].body : ''}}/>
+            <ArticlesViewBody ref={bodyRef} dangerouslySetInnerHTML={{__html: selectedArticle ? selectedArticle.body : ''}}/>
             <ArticlesViewFooter>
                 {articles ?
                     <FooterContainer>

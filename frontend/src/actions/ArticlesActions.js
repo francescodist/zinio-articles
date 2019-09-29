@@ -1,11 +1,3 @@
-import {useState} from 'react';
-
-export function useArticles() {
-    const [articles, setArticles] = useState(null);
-    fetchArticles().then(articles => setArticles(articles));
-    return articles;
-}
-
 export async function fetchArticles() {
     const res = await fetch('http://localhost:3001/articles');
     let {data} = await res.json();
