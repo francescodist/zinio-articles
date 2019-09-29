@@ -8,16 +8,13 @@ import {
     ArticleTitle, FooterContainer, FooterNavigationButtons, FooterPageIndex, NavigationButton
 } from "./ArticlesViewStyles";
 import {searchArticles, selectArticleById} from "../../actions";
-import {useArticles} from "../../hooks";
+import {useArticleIndex, useArticles, useSelectedArticle} from "../../hooks";
 
 function ArticlesView() {
 
-    const [
-        articles,
-        selectedIndex,
-        setSelectedIndex,
-        selectedArticle
-    ] = useArticles(null);
+    const articles = useArticles();
+    const [selectedIndex, setSelectedIndex] = useArticleIndex();
+    const selectedArticle = useSelectedArticle(selectedIndex);
     const [search, setSearch] = useState(null);
     const [searchResults, setSearchResults] = useState([]);
 
