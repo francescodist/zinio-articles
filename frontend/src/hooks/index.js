@@ -1,3 +1,3 @@
-import {useArticles, useArticleIndex, useSelectedArticle} from "./ArticleHooks";
+import {useArticles, useArticleIndex, useSelectedArticle, useSearch} from "./ArticleHooks";
 
-export {useArticles, useArticleIndex, useSelectedArticle};
+export {useArticles, useArticleIndex, useSelectedArticle, useSearch};

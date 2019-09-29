@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {
     ArticleSearchButton, ArticleSearchInput, ArticleSearchResult, ArticleSearchResults,
     ArticlesViewBody,
@@ -7,24 +7,17 @@ import {
     ArticlesViewHeader,
     ArticleTitle, FooterContainer, FooterNavigationButtons, FooterPageIndex, NavigationButton
 } from "./ArticlesViewStyles";
-import {searchArticles, selectArticleById} from "../../actions";
-import {useArticleIndex, useArticles, useSelectedArticle} from "../../hooks";
+import {selectArticleById} from "../../actions";
+import {useArticleIndex, useArticles, useSearch, useSelectedArticle} from "../../hooks";
 
 function ArticlesView() {
 
     const articles = useArticles();
     const [selectedIndex, setSelectedIndex] = useArticleIndex();
     const selectedArticle = useSelectedArticle(selectedIndex);
-    const [search, setSearch] = useState(null);
-    const [searchResults, setSearchResults] = useState([]);
+    const [search, setSearch, searchResults] = useSearch();
 
     const bodyRef = React.createRef();
-
-    useEffect(() => {
-        if (search && search.length > 0) {
-            setSearchResults(searchArticles(articles, search));
-        }
-    }, [articles, search]);
 
     useEffect(() => {
         bodyRef.current.scrollTop = 0;
