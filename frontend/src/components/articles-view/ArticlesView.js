@@ -31,7 +31,7 @@ function ArticlesView() {
     return (
         <ArticlesViewContainer>
             <ArticlesViewHeader>
-                <ArticleTitle>Title</ArticleTitle>
+                <ArticleTitle>{articles ? articles[selectedIndex].title : 'Articles'}</ArticleTitle>
             </ArticlesViewHeader>
             <ArticlesViewBody dangerouslySetInnerHTML={{__html: articles ? articles[selectedIndex].body : ''}}/>
             <ArticlesViewFooter>

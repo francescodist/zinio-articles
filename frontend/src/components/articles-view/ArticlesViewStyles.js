@@ -3,7 +3,7 @@ import styled, {css} from "styled-components";
 const defaultBar = css`
   height: 64px;
   flex-shrink: 0;
-  width: 100%;
+  width: 100vw;
   background-color: #1091bd;
   display: flex;
 `;
@@ -19,10 +19,21 @@ export const ArticlesViewHeader = styled.header`
   ${defaultBar};
   font-size: 30px;
   color: #ffffff;
+  
+  @media(max-width: 400px) {
+    & {
+      font-size: 18px;
+    }
+  }
 `;
 
 export const ArticleTitle = styled.div`
   margin: auto;
+  padding: 0 10px;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const ArticlesViewBody = styled.div`
