@@ -16,6 +16,8 @@ function ArticlesView() {
     const [search, setSearch] = useState(null);
     const [searchResults, setSearchResults] = useState([]);
 
+    const bodyRef = React.createRef();
+
     useEffect(() => {
         fetchArticles().then(articles => {
             setSelectedIndex(0);
@@ -28,6 +30,10 @@ function ArticlesView() {
             setSearchResults(searchArticles(articles, search));
         }
     }, [articles, search]);
+
+    useEffect(() => {
+        bodyRef.current.scrollTop = 0;
+    }, [bodyRef, selectedIndex]);
 
     return (
         <ArticlesViewContainer>
@@ -44,7 +50,7 @@ function ArticlesView() {
                             </ArticleSearchResult>)}
                     </ArticleSearchResults> : ''}
             </ArticlesViewHeader>
-            <ArticlesViewBody dangerouslySetInnerHTML={{__html: articles ? articles[selectedIndex].body : ''}}/>
+            <ArticlesViewBody ref={bodyRef} dangerouslySetInnerHTML={{__html: articles ? articles[selectedIndex].body : ''}}/>
             <ArticlesViewFooter>
                 {articles ?
                     <FooterContainer>
