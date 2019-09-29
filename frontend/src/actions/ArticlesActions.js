@@ -7,3 +7,16 @@ export async function fetchArticles() {
     });
     return data;
 }
+
+export function searchArticles(articles, search) {
+    const searchRegex = new RegExp(search, 'ig');
+    return articles
+        .filter(article =>
+            searchRegex.test(article.title) ||
+            searchRegex.test(article.body) ||
+            (article.authors && article.authors.find(author => searchRegex.test(author))));
+}
+
+export function selectArticleById(id, articles) {
+    return articles.findIndex(article => article.id === id);
+}

@@ -1,3 +1,3 @@
-import {fetchArticles} from "./ArticlesActions";
+import {fetchArticles, searchArticles, selectArticleById} from "./ArticlesActions";
 
-export {fetchArticles};
+export {fetchArticles, searchArticles, selectArticleById};
