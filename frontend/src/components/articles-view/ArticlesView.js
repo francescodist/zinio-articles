@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
     ArticlesViewBody,
     ArticlesViewContainer,
@@ -6,14 +6,22 @@ import {
     ArticlesViewHeader,
     ArticleTitle
 } from "./ArticlesViewStyles";
+import {fetchArticles} from "../../actions/ArticlesActions";
 
 function ArticlesView() {
+
+    const [articles, setArticles] = useState(null);
+
+    useEffect(() => {
+        fetchArticles().then(articles => setArticles(articles));
+    }, []);
+
     return (
         <ArticlesViewContainer>
             <ArticlesViewHeader>
                 <ArticleTitle>Title</ArticleTitle>
             </ArticlesViewHeader>
-            <ArticlesViewBody/>
+            <ArticlesViewBody dangerouslySetInnerHTML={{__html: articles ? articles[0].body : ''}}/>
             <ArticlesViewFooter>
 
             </ArticlesViewFooter>
