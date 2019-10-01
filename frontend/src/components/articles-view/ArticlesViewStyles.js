@@ -37,7 +37,21 @@ export const ArticlesViewContainer = styled.div`
 export const ArticlesViewBody = styled.div`
   max-height: 100%;
   overflow: auto;
-  width: 100%;
+  width: 90vw;
+  max-width: 100vw;
+  text-align: center;
+  padding: 20px 5vw;
+  
+  div{
+  display: inline;
+    img {
+        max-width: 100%;
+        max-height: 50vh;
+        display: inline;
+        object-fit: contain;
+    }
+  }
+  
 `;
 
 export const ArticlesViewFooter = styled.footer`
