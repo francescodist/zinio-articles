@@ -19,7 +19,7 @@ export default function ArticlesViewHeader(props) {
         if(search !== null && !isFocused) {
             inputSearchRef.current.focus();
         }
-    }, [search]);
+    }, [inputSearchRef, search]);
 
     return (
         <ArticleHeader>
