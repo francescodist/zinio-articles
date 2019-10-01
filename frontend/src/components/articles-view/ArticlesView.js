@@ -37,9 +37,9 @@ function ArticlesView() {
                             {selectedArticle.index + 1} of {articles.length}
                         </FooterPageIndex>
                         <FooterNavigationButtons>
-                            {selectedIndex > 0 ?
+                            {selectedArticle.index > 0 ?
                                 <NavigationButton onClick={previousPage}>Previous</NavigationButton> : ''}
-                            {selectedIndex < articles.length - 1 ?
+                            {selectedArticle.index < articles.length - 1 ?
                                 <NavigationButton onClick={nextPage}>Next</NavigationButton> : ''}
                         </FooterNavigationButtons>
                     </FooterContainer> : ''}
