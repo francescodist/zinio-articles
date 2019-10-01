@@ -36,6 +36,10 @@ export const ArticleSearchInput = styled.input`
   max-width: 100%;
   width: 100%;
   
+  ::placeholder {
+    color: rgba(255,255,255,0.5);
+  }
+  
   @media(max-width: 600px) {
     & {
       margin-left: 10px;

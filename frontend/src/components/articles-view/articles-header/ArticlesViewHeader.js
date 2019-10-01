@@ -25,7 +25,7 @@ export default function ArticlesViewHeader(props) {
         <ArticleHeader>
             {search === null ?
                 <ArticleTitle>{props.selectedArticle ? props.selectedArticle.title : 'Articles'}</ArticleTitle>
-                : <ArticleSearchInput ref={inputSearchRef} onChange={searchInput} value={search}/>}
+                : <ArticleSearchInput placeholder={'Search Articles...'} ref={inputSearchRef} onChange={searchInput} value={search}/>}
             <ArticleSearchButton isSearching={search !== null} onClick={toggleSearch}/>
             {search && search.length > 0 ?
                 <ArticleSearchResults>
