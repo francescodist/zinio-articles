@@ -27,7 +27,7 @@ export function useSelectedArticle(articles=[], index = null, id = null) {
 
     useEffect(() => {
         if(articles && id !== null) {
-            setSelectedArticle(selectArticleById(id, articles));
+            setSelectedArticle(selectArticleById(articles, id));
         }
     }, [articles, id]);
 

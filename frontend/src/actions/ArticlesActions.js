@@ -1,11 +1,10 @@
 export async function fetchArticles() {
     const res = await fetch('http://localhost:3001/articles');
-    let {data} = await res.json();
-    data.map(article => {
+    let {data} = await res.json() || {data: []};
+    return (data || []).map(article => {
         article.body = article.body.replace(/(<img[^>]+src=")/g, '$1https://cdn2.audiencemedia.com');
         return article;
     });
-    return data;
 }
 
 export function searchArticles(articles, search) {
@@ -17,6 +16,6 @@ export function searchArticles(articles, search) {
             (article.authors && article.authors.find(author => searchRegex.test(author))));
 }
 
-export function selectArticleById(id, articles) {
+export function selectArticleById(articles, id) {
     return articles.find(article => article.id === id);
 }
