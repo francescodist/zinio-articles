@@ -1,15 +1,17 @@
 import React from 'react';
-import {Redirect, Route, Switch} from "react-router-dom";
+import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
 import ArticlesView from "./components/articles-view";
 import styled from "styled-components";
 
 function App() {
   return (
       <AppView>
-          <Switch>
-              <Route exact path="/articles"  component={ArticlesView} />
-              <Redirect to="/articles" />
-          </Switch>
+          <BrowserRouter>
+              <Switch>
+                  <Route exact path="/articles"  component={ArticlesView} />
+                  <Redirect to="/articles" />
+              </Switch>
+          </BrowserRouter>
       </AppView>
   );
 }
